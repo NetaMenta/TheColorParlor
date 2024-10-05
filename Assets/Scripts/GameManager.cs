@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
             TotalAccuracyText.text = formattedNumber + "%";
             if (accuracy >= 90f)
             {
-                TotalAccuracyText2.text = formattedNumber + "YOURE AWESOME AT THIS!";
+                TotalAccuracyText2.text = "YOURE AWESOME AT THIS!";
             }
             else if (accuracy <= 90f)
             {
@@ -165,7 +165,9 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        characters[currentCharacter].SetActive(false);
         accuracyResults = new List<float>();
         currentCharacter = 0;
+        characters[currentCharacter].SetActive(true);
     }
 }

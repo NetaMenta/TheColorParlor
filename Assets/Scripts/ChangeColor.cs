@@ -12,8 +12,8 @@ public class ChangeColor : MonoBehaviour
     public Color RandomizeColor()
 {
             hue = Random.Range(0.05f, 0.95f);        
-            saturation = Random.Range(0.15f, 0.85f); 
-            value = Random.Range(0.15f, 0.85f);   
+            saturation = Random.Range(0.15f, 1f); 
+            value = Random.Range(0.2f, 1f);   
 
             return Color.HSVToRGB(hue, saturation, value);
     }
