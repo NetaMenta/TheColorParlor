@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMPro.TMP_Text accuracyText;
     [SerializeField] TMPro.TMP_Text TotalAccuracyText;
     [SerializeField] TMPro.TMP_Text TotalAccuracyText2;
+    [SerializeField] TMPro.TMP_Text CurrentLevel;
+    [SerializeField] TMPro.TMP_Text TotalLevels;
     [SerializeField] ColorPickerControl playerColor;
 
     public List<float> accuracyResults = new List<float>();
@@ -30,6 +32,9 @@ public class GameManager : MonoBehaviour
         GetPropHSVValues();
         updatePlayerColor();
         compareColorsUpdate();
+        DisplayCurrentCharacter();
+        DisplayLevelLength();
+
     }
     public void Update()
     {
@@ -169,5 +174,16 @@ public class GameManager : MonoBehaviour
         accuracyResults = new List<float>();
         currentCharacter = 0;
         characters[currentCharacter].SetActive(true);
+    }
+
+    public void DisplayCurrentCharacter()
+    {
+        int level = accuracyResults.Count;
+        CurrentLevel.text = level.ToString();
+    }
+
+    public void DisplayLevelLength()
+    {
+        TotalLevels.text = "/ " + levelLength.ToString();
     }
 }
